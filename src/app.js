@@ -4,7 +4,8 @@ const port = process.env.port || 3000;
 const app = express();
 
 app.get("/health", (req, res) => {
-    return res.json({ up: true, date: new Date().getDate().toString()})
+    const now = new Date().toLocaleString();
+    return res.json({ up: true, date: now})
 });
 
 app.get("/", (req, res) => {
