@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: express-example-api
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+
+    buildCommand: npm install
+    startCommand: npm run dev
+    
+    autoDeploy: true
+
+    envVars:
+      - key: NODE_ENV
+        value: production
